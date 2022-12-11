@@ -6,7 +6,7 @@ output: github_document
  
 
 ```{r, echo=FALSE}
-xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/en/slides_aulas/restor_unam/02_intro_dryfor.html#1", ratio = "16:9")
+xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/slides_aulas/restor_unam/02_intro_dryfor.html#1", ratio = "16:9")
 ```
 
 ## Definición de Bosques Tropicales Secos

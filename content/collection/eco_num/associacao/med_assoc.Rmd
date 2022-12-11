@@ -17,7 +17,7 @@ library(xaringanExtra)
 
 ```{r, echo=FALSE}
 
-xaringanExtra::embed_xaringan(url="http://ecoaplic.org/en/slides_aulas/slides_eco_num/slide_med_assoc.html#1")
+xaringanExtra::embed_xaringan(url="http://ecoaplic.org/slides_aulas/slides_eco_num/slide_med_assoc.html#1")
 
 ```
 

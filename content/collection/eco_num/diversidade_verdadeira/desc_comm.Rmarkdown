@@ -16,7 +16,7 @@ library(vegan)
 
 
 ```{r echo=FALSE}
-xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/en/slides_aulas/slides_eco_num/slides_div_verdadeira.html#1" )
+xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/slides_aulas/slides_eco_num/slides_div_verdadeira.html#1" )
 ```
 
 **Texto extraído do livro Análises Ecológicas no R** (in press)

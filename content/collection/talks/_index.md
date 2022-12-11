@@ -21,7 +21,7 @@ weight: 2
 
 ## Talks on Congresses and Meetings
 
-- [SOBRE 2022](https://ecoaplic.org/en/slides_aulas/apresentacoes/sobre_2022#1)
+- [SOBRE 2022](https://ecoaplic.org/slides_aulas/apresentacoes/sobre_2022#1)
 
 
 ## Autor

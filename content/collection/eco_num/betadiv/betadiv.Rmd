@@ -18,7 +18,7 @@ library(betapart)
 
 
 ```{r echo=FALSE}
-xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/en/slides_aulas/slides_eco_num/beta_diversidade.html#1" )
+xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/slides_aulas/slides_eco_num/beta_diversidade.html#1" )
 ```
 
 # Beta diversidade é medir diferença entre comunidades

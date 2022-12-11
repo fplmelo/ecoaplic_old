@@ -10,7 +10,7 @@ type: book
 Vista aérea da Amazônia perto de Altamira, no Pará (Foto: REUTERS/Nacho Doce)
 
 
-## Os slides desta aula estão [nesse link](https://fplmelo.github.io/biocons/aula4_biocons.html#1)
+## Os slides desta aula estão [nesse link](https://ecoaplic.org/slides_aulas/biocons/aula4_biocons.html#1)
 
 ## As origens do pensamento conservacionista
 
