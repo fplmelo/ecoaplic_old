@@ -4,14 +4,16 @@ subtitle: "Explorando dados"
 author: "Felipe Melo"
 institute: "Laboratório de Ecologia Aplicada - UFPE"
 date: "`r Sys.Date()`"
-output:
+encoding: "UTF-8"
+output: 
   xaringan::moon_reader:
-    lib_dir: libs
+    libs_dir: libs
     nature:
-      ratio: '16:9'
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+      ratio: '16:9'
+      beforeInit: "macros.js"
 
 ---
 ```{r setup, include=FALSE}
