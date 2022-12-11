@@ -1,9 +1,17 @@
 ---
-date: "2021-01-01"
-linkTitle: Ecologia de Paisagens
-summary: Métodos, conceitos e ferramentas para entender e analisar como os diversos elementos da paisagem influenciam na persistência da biodiversidade
-title: "\U0001F4D2 Ecologia de Paisagens"
-type: book
+author: Felipe Melo
+date: ""
+description: |
+  Teoria ecológica para compreender a organização da vida no espaço
+excerpt: null
+layout: single-series
+publishDate: ""
+show_author_byline: false
+show_post_date: false
+show_post_thumbnail: true
+subtitle: Ecologia do espaço.
+title: Ecologia de Paisagens
+weight: 2
 ---
 
 
