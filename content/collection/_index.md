@@ -11,7 +11,7 @@ cascade:
     text_contents_label: On this page
     text_link_label: ""
     text_link_url: ""
-    text_series_label: Outline
+    text_series_label: Content
     title: Courses
 description: "Here you'll find all relevant material of the courses I teach"
 layout: list-sidebar
