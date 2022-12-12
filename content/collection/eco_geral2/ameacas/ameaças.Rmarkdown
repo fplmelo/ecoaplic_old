@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE)
 # *Slides* 
 
 ```{r, echo=FALSE}
-xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/en/slides_aulas/eco_geral2/aula3_ameaças.html#1")
+xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/slides_aulas/eco_geral2/aula3_ameaças.html#1")
 ```
 
 # Leituras sugeridas
