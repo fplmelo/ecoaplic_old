@@ -13,7 +13,7 @@ type: book
 
 
 ```{r, echo=FALSE}
-xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/slides_aulas/ecol_paisag/01_intro_landscape#1")
+xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/slides_aulas/ecol_paisag/01_intro_landscape.html")
 ```
 
 
