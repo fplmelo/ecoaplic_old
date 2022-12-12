@@ -1,7 +1,7 @@
 ---
 title: "Padrões de Distribuição e Magnitude da Biodiversidade"
 author: "Felipe Melo"
-date: "2022-12-10"
+date: "2022-12-12"
 html_document:
     df_print: paged
     toc: true
@@ -13,7 +13,7 @@ html_document:
 # *Slides*
 
 <div class="shareagain" style="min-width:300px;margin:1em auto;" data-exeternal="1">
-<iframe src="https://fplmelo.github.io/ecogeral2/slides/aula2_magnitude.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<iframe src="https://ecoaplic.org/slides_aulas/eco_geral2/aula2_magnitude.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
 

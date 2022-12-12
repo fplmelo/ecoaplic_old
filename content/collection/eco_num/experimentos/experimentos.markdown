@@ -13,8 +13,8 @@ output:
 
 *Slides*
 
-<div class="shareagain" style="min-width:300px;margin:1em auto;">
-<iframe src="https://fplmelo.github.io/eco_numerica/slides/slide_experimento.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<div class="shareagain" style="min-width:300px;margin:1em auto;" data-exeternal="1">
+<iframe src="https://ecoaplic.org/slides_aulas/slides_eco_num/slide_experimento.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
 
@@ -30,15 +30,15 @@ Experimentos ecológicos não diferem de qualquer outro experimento científico.
 
 ### - Definir um objetivo
 
--   Qual o objetivo do experimento? A resposta a essa pergunta é porque o experimento precisa ser realizado. Simples, mas desafiador. Tente você mesmo.
+- Qual o objetivo do experimento? A resposta a essa pergunta é porque o experimento precisa ser realizado. Simples, mas desafiador. Tente você mesmo.
 
 ### - Definir a unidade amostral
 
--   Aqui é preciso definir qual a unidades mínima de variação do seu experimento. É o nível sobre o qual as medições serão feitas. É nesse nível que medimos variação (quando experimentos observacionais) our impomos variação (experimentos verdadeiros).
+- Aqui é preciso definir qual a unidades mínima de variação do seu experimento. É o nível sobre o qual as medições serão feitas. É nesse nível que medimos variação (quando experimentos observacionais) our impomos variação (experimentos verdadeiros).
 
 ### - Definição de variáveis
 
--   Nesta fase precisamos saber quais serão as variáveis [**independentes e dependentes**](https://pt.wikipedia.org/wiki/Vari%C3%A1veis_dependentes_e_independentes). Ou seja, precisamos saber o que será medido como efeito e como resposta, respectivamente.
+- Nesta fase precisamos saber quais serão as variáveis [**independentes e dependentes**](https://pt.wikipedia.org/wiki/Vari%C3%A1veis_dependentes_e_independentes). Ou seja, precisamos saber o que será medido como efeito e como resposta, respectivamente.
 
 ## Porque precisamos saber disso para ecologia numérica?
 
@@ -52,36 +52,36 @@ Qual a unidade de análises onde mede diversidade gamma?
 
 ## Há pelo menos três variáveis básicas a serem medidas em comunidades biológicas
 
--   Riqueza: Quantas “entidades” há numa comunidade
+- Riqueza: Quantas “entidades” há numa comunidade
 
--   Abundância: Qual a quantidade de repreentantes de cada entidade na comunidade
+- Abundância: Qual a quantidade de repreentantes de cada entidade na comunidade
 
--   Composição: Quais são as “entidades” que compõem uma comunidade biológica. Atenção! Essa faz mais sentido se comparamos a diferença entre duas comunidades.
+- Composição: Quais são as “entidades” que compõem uma comunidade biológica. Atenção! Essa faz mais sentido se comparamos a diferença entre duas comunidades.
 
 Há outras características que podems ser medidas como biomassa, mas que devem ser aferidas em cada indivíduo da comunidade
 
 ## Veja esse exemplo
 
--   Quantas “entidades” há nas figuras da turma do Nemo?
--   Qual a quantidade em cada uma delas?
+- Quantas “entidades” há nas figuras da turma do Nemo?
+- Qual a quantidade em cada uma delas?
 
 <img src=https://i.pinimg.com/originals/0b/42/aa/0b42aa0390ff7316e14f49c072acc1a8.jpg width= 400>
 
 <img src=https://images.saymedia-content.com/.image/t_share/MTc0MjIzOTA0NzE2MzY3MzU2/tankgang.jpg width= 400>
 
--   Qual a diferença de composição entre as duas? Tente quantificar
+- Qual a diferença de composição entre as duas? Tente quantificar
 
 ## Exercício para entrega
 
 ### Fazer um pequeno site para agrupar todos os exercícios da disciplina
 
-1.  Crie um pequeno site para agrupar seus exerćicios dessa disciplina utilizando o [seguinte tutorial sobre Rmarkdown](https://icaroagostino.github.io/post/rmd-cov19/), ou [esse aqui](https://jordaoalvesds.wordpress.com/2019/10/12/tutorial-relatorios-dinamicos-com-rmarkdown/)
+1)  Crie um pequeno site para agrupar seus exerćicios dessa disciplina utilizando o [seguinte tutorial sobre Rmarkdown](https://icaroagostino.github.io/post/rmd-cov19/), ou [esse aqui](https://jordaoalvesds.wordpress.com/2019/10/12/tutorial-relatorios-dinamicos-com-rmarkdown/)
 
-2.  Agora, faça o exerćicio essa aula, que consistem em:
+2)  Agora, faça o exerćicio essa aula, que consistem em:
 
--   Imagine uma paisagem, invente uma counidade biológica e alguns gradientes ambientais para descrever essa paisagem e como a biodiversidade se distribui na mesma (escreva essa parte)
--   Crie uma comunidade fictícia no R
--   Faça descrições simples dessa comunidade, como: **riqueza e abundânica**
--   Tente demonstrar graficamente esses dados
+- Imagine uma paisagem, invente uma counidade biológica e alguns gradientes ambientais para descrever essa paisagem e como a biodiversidade se distribui na mesma (escreva essa parte)
+- Crie uma comunidade fictícia no R
+- Faça descrições simples dessa comunidade, como: **riqueza e abundânica**
+- Tente demonstrar graficamente esses dados
 
-3.  Publique no Rpubs através do próprio Rstudio. [Siga esse tutorial](https://www.youtube.com/watch?v=GJ36zamYVLg)
+3)  Publique no Rpubs através do próprio Rstudio. [Siga esse tutorial](https://www.youtube.com/watch?v=GJ36zamYVLg)

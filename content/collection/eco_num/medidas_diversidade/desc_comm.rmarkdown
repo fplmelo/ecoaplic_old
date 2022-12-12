@@ -101,7 +101,7 @@ diversity(comm_ex$siteB, index = "simpson")
 ```{r}
 ## Pacotes
 library(devtools)
-library(ecodados) # para instalar isso é preciso o comado "devtools::install_github("paternogbc/ecodados")"
+library(ecodados) # para instalar isso é preciso o comado #devtools::install_github("paternogbc/ecodados")
 library (vegan)
 library(ggplot2)
 library(BiodiversityR)

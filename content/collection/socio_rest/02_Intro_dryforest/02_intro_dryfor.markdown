@@ -5,7 +5,7 @@ output: github_document
 
 <script src="/rmarkdown-libs/fitvids/fitvids.min.js"></script>
 <div class="shareagain" style="min-width:300px;margin:1em auto;" data-exeternal="1">
-<iframe src="https://ecoaplic.org/en/slides_aulas/restor_unam/02_intro_dryfor.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<iframe src="https://ecoaplic.org/slides_aulas/restor_unam/02_intro_dryfor.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
 
@@ -21,23 +21,23 @@ Bosques tropicales son la mitad de los bosques tropicales y subtropicales del mu
 
 ### Lecturas recomenadadas
 
--   Un resumen de hechos sobre los bosques tropicales secos por [CIFOR](https://www.cifor.org/publications/pdf_files/factsheet/4875-factsheet.pdf)
+- Un resumen de hechos sobre los bosques tropicales secos por [CIFOR](https://www.cifor.org/publications/pdf_files/factsheet/4875-factsheet.pdf)
 
--   [Artpiculo clásico sobre Ecologia de Bosques Tropicales Secos de Ariel y Lugo](http://links.jstor.org/sici?sici=0066-4162%281986%2917%3C67%3AEOTDF%3E2.0.CO%3B2-Z)
+- [Artpiculo clásico sobre Ecologia de Bosques Tropicales Secos de Ariel y Lugo](http://links.jstor.org/sici?sici=0066-4162%281986%2917%3C67%3AEOTDF%3E2.0.CO%3B2-Z)
 
--   [Murphy y Lugo 1986, otro cçlásico](https://www.annualreviews.org/doi/abs/10.1146/annurev.es.17.110186.000435)
+- [Murphy y Lugo 1986, otro cçlásico](https://www.annualreviews.org/doi/abs/10.1146/annurev.es.17.110186.000435)
 
--   [Número especial del periódico Sutainability sobre restauracipon de Bosques Secos](https://www.mdpi.com/journal/sustainability/special_issues/TropicalDryForestRestoration)
+- [Número especial del periódico Sutainability sobre restauracipon de Bosques Secos](https://www.mdpi.com/journal/sustainability/special_issues/TropicalDryForestRestoration)
 
--   [Caatinga: The Largest Tropical Dry Forest Region in South America](https://pt.b-ok.lat/book/3420963/c5d341)
+- [Caatinga: The Largest Tropical Dry Forest Region in South America](https://pt.b-ok.lat/book/3420963/c5d341)
 
--   [Tropical Dry Forests in the Americas: Ecology, Conservation, and Management](https://pt.b-ok.lat/book/2366156/5d59ef)
+- [Tropical Dry Forests in the Americas: Ecology, Conservation, and Management](https://pt.b-ok.lat/book/2366156/5d59ef)
 
 ### Videos
 
--   [The structure and function of tropical dry forests: Jennifer Powers](https://www.youtube.com/watch?v=e-OXYOzBXI8)
+- [The structure and function of tropical dry forests: Jennifer Powers](https://www.youtube.com/watch?v=e-OXYOzBXI8)
 
--   [ATBC 2020 Webinar Series in Tropical Ecology and Conservation](https://tropicalbiology.org/webinars/atbc2020series/structure-and-function/)
+- [ATBC 2020 Webinar Series in Tropical Ecology and Conservation](https://tropicalbiology.org/webinars/atbc2020series/structure-and-function/)
 
 ### Clase Grabada
 

@@ -25,7 +25,7 @@ Escrever, como vimos, é uma prática eterna na vida de m pesqusiador e deve ser
 
 ## Slides
 
-Veja os slides dessa aula [**aqui**](https://fplmelo.github.io/des_proj/aula4_projeto.html#1)
+Veja os slides dessa aula [**aqui**](https://ecoaplic.org/slides_aula/des_proj/aula4_projeto.html#1)
 
 ## Mapa mental de um projeto
 

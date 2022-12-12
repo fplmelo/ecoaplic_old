@@ -1,7 +1,7 @@
 ---
 title: "Ameaças à Biodiversidade"
 author: "Felipe Melo"
-date: "2022-12-10"
+date: "2022-12-12"
 output: html_document
     
 ---
@@ -16,7 +16,7 @@ output: html_document
 # *Slides*
 
 <div class="shareagain" style="min-width:300px;margin:1em auto;" data-exeternal="1">
-<iframe src="https://ecoaplic.org/en/slides_aulas/eco_geral2/aula3_ameaças.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<iframe src="https://ecoaplic.org/slides_aulas/eco_geral2/aula3_ameaças.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
 

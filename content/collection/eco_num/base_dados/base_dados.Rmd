@@ -117,7 +117,7 @@ Agora é só carregar as bases de dados usando o comando "load", lembrando de co
 
 ```{r}
 # Vamos carregar os dados que o livro usa como exemplo
-load("/home/felipe/Google Drive/github/ecoa/content/en/courses/eco_num/r_data/NEwR-2ed_code_data/NEwR2-Data/Doubs.RData") # mude o caminho para o seu próprio´
+load("/home/felipe/Google Drive/github/ecoaplic/content/collection/eco_num/r_data/NEwR-2ed_code_data/NEwR2-Data/Doubs.RData") # mude o caminho para o seu próprio´
 ```
 
 

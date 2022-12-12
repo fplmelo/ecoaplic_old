@@ -11,8 +11,8 @@ output: html_document
 
 <br>
 
-<div class="shareagain" style="min-width:300px;margin:1em auto;">
-<iframe src="https://ecoaplic.org/en/slides_aulas/slides_eco_num/slides_div_verdadeira.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<div class="shareagain" style="min-width:300px;margin:1em auto;" data-exeternal="1">
+<iframe src="https://ecoaplic.org/slides_aulas/slides_eco_num/slides_div_verdadeira.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
 
@@ -61,7 +61,7 @@ library(BiodiversityR)
 
     ## Carregando pacotes exigidos: tcltk
 
-    ## BiodiversityR 2.14-1: Use command BiodiversityRGUI() to launch the Graphical User Interface; 
+    ## BiodiversityR 2.14-4: Use command BiodiversityRGUI() to launch the Graphical User Interface; 
     ## to see changes use BiodiversityRGUI(changeLog=TRUE, backward.compatibility.messages=TRUE)
 
 ``` r
@@ -147,7 +147,7 @@ mc<-MetaCommunity(df)
 plot(mc)
 ```
 
-<img src="/en/courses/eco_num/diversidade_verdadeira/desc_comm_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+<img src="/collection/eco_num/diversidade_verdadeira/desc_comm_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 
 ``` r
 summary(DivPart(q=0, mc), Correction="None")
@@ -207,7 +207,7 @@ summary(DivPart(q=2, mc), Correction="None")
 autoplot(DivProfile(q.seq = seq(0, 2, 0.1),MC=mc, Correction = "None"))
 ```
 
-<img src="/en/courses/eco_num/diversidade_verdadeira/desc_comm_files/figure-html/unnamed-chunk-7-2.png" width="672" />
+<img src="/collection/eco_num/diversidade_verdadeira/desc_comm_files/figure-html/unnamed-chunk-7-2.png" width="672" />
 
 ``` r
 # Tem mais coisa que pode ser explorada
@@ -221,7 +221,7 @@ alfa.est0<-DivEst(q = 0, mc, Simulations = 100, Correction = "None")
 plot(alfa.est0)
 ```
 
-<img src="/en/courses/eco_num/diversidade_verdadeira/desc_comm_files/figure-html/unnamed-chunk-7-3.png" width="672" />
+<img src="/collection/eco_num/diversidade_verdadeira/desc_comm_files/figure-html/unnamed-chunk-7-3.png" width="672" />
 
 ``` r
 alfa.est1<-DivEst(q = 1, mc, Simulations = 100, Correction = "None")
@@ -231,7 +231,7 @@ alfa.est1<-DivEst(q = 1, mc, Simulations = 100, Correction = "None")
 plot(alfa.est1)
 ```
 
-<img src="/en/courses/eco_num/diversidade_verdadeira/desc_comm_files/figure-html/unnamed-chunk-7-4.png" width="672" />
+<img src="/collection/eco_num/diversidade_verdadeira/desc_comm_files/figure-html/unnamed-chunk-7-4.png" width="672" />
 
 ``` r
 alfa.est2<-DivEst(q = 2, mc, Simulations = 100, Correction = "None")
@@ -241,4 +241,4 @@ alfa.est2<-DivEst(q = 2, mc, Simulations = 100, Correction = "None")
 plot(alfa.est2)
 ```
 
-<img src="/en/courses/eco_num/diversidade_verdadeira/desc_comm_files/figure-html/unnamed-chunk-7-5.png" width="672" />
+<img src="/collection/eco_num/diversidade_verdadeira/desc_comm_files/figure-html/unnamed-chunk-7-5.png" width="672" />

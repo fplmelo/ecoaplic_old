@@ -10,8 +10,8 @@ type: book
 
 # O que é uma paisagem?
 
-<div class="shareagain" style="min-width:300px;margin:1em auto;">
-<iframe src="https://ecoaplic.org/en/slides_aulas/ecol_paisag/01_intro_landscape#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<div class="shareagain" style="min-width:300px;margin:1em auto;" data-exeternal="1">
+<iframe src="https://ecoaplic.org/slides_aulas/ecol_paisag/01_intro_landscape.html" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
 
@@ -22,14 +22,14 @@ Comece revisando o conteúdo visto em classe com essa aula maravilhosa do [Dr. 
 
 ## Características bścias de uma paisagem
 
--   Heterogeneidade
--   Delimitação espacial e temporal
+- Heterogeneidade
+- Delimitação espacial e temporal
 
 ## Resumo
 
--   A paisagem é uma “janela” pela qual observamos um fenômeno biológico
--   Dentro dessa janela é preciso haver heterogeneidade, que deve ser mensurável
--   Ecologia de paisagens possui grande aplicação prática porque permite avaliar grandes porções de território e planejar a conservação do mesmo
+- A paisagem é uma “janela” pela qual observamos um fenômeno biológico
+- Dentro dessa janela é preciso haver heterogeneidade, que deve ser mensurável
+- Ecologia de paisagens possui grande aplicação prática porque permite avaliar grandes porções de território e planejar a conservação do mesmo
 
 ## Para começar a leitura
 

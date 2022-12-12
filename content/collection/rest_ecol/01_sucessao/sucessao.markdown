@@ -12,8 +12,8 @@ output: github_document
 
 # *Slides*
 
-<div class="shareagain" style="min-width:300px;margin:1em auto;">
-<iframe src="https://ecoaplic.org/en/slides_aulas/eco_rest/eco_rest_regen.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<div class="shareagain" style="min-width:300px;margin:1em auto;" data-exeternal="1">
+<iframe src="https://ecoaplic.org/slides_aulas/eco_rest/eco_rest_regen.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
 
@@ -29,6 +29,6 @@ A [Wikipedia](https://pt.wikipedia.org/wiki/Sucess%C3%A3o_ecol%C3%B3gica) define
 
 ### Para a próxima aula
 
--   Leia este [texto](https://bityli.com/sdJuBB) produzido pelo Prof [Sérgius Gandolfi](http://www.lcb.esalq.usp.br/equipe/sergius-gandolfi).
+- Leia este [texto](https://bityli.com/sdJuBB) produzido pelo Prof [Sérgius Gandolfi](http://www.lcb.esalq.usp.br/equipe/sergius-gandolfi).
 
--   Venha preparado para discutir os conceitos apresentados. **vale nota**
+- Venha preparado para discutir os conceitos apresentados. **vale nota**

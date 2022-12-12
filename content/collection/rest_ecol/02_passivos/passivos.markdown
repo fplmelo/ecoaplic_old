@@ -13,8 +13,8 @@ output: github_document
 
 # *Slides*
 
-<div class="shareagain" style="min-width:300px;margin:1em auto;">
-<iframe src="https://ecoaplic.org/en/slides_aulas/eco_rest/03_metodos_passivos.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<div class="shareagain" style="min-width:300px;margin:1em auto;" data-exeternal="1">
+<iframe src="https://ecoaplic.org/slides_aulas/eco_rest/03_metodos_passivos.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
 
@@ -40,6 +40,6 @@ São técnicas que utilizam processos naturais de regeneração com nenhuma ou m
 
 ### Para a próxima aula
 
--   Assistam este [video](https://www.youtube.com/watch?v=iivuhuzYIow)
+- Assistam este [video](https://www.youtube.com/watch?v=iivuhuzYIow)
 
--   Venha preparado para discutir os conceitos apresentados. **vale nota**
+- Venha preparado para discutir os conceitos apresentados. **vale nota**

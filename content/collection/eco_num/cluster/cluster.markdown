@@ -17,7 +17,7 @@ output:
 *Slides*
 
 <div class="shareagain" style="min-width:300px;margin:1em auto;" data-exeternal="1">
-<iframe src="http://ecoaplic.org/en/courses/eco_num/slides_eco_num/slide_aula3_cluster.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
+<iframe src="http://ecoaplic.org/courses/eco_num/slides_eco_num/slide_aula3_cluster.html#1" width="1600" height="900" style="border:2px solid currentColor;" loading="lazy" allowfullscreen></iframe>
 <script>fitvids('.shareagain', {players: 'iframe'});</script>
 </div>
 
@@ -91,7 +91,7 @@ clust_alun.comp<-hclust(al.dist, method = "complete")
 clust_graf_alun.com<-plot(clust_alun.comp, hang=-1)
 ```
 
-<img src="/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+<img src="/collection/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
 Mas, diante dessa estrutura, qual é a informação que você extrai? Sem uma hipotese, não tem muito o que fazer a não ser observar a distribuição dos 40 alunos nos grupos e ficar pensando o que eles têm em comum e talvez, num segundo momento, pensar numa hipotese.
 
@@ -108,7 +108,7 @@ clust_alun<-hclust(al.dist, method = "single")
 clust_graf_alun<-plot(clust_alun, hang=-1)
 ```
 
-<img src="/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+<img src="/collection/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-5-1.png" width="672" />
 
 E se testarmos outros metodos, como “**Ward**”?
 
@@ -119,7 +119,7 @@ clust_alun<-hclust(al.dist, method = "ward.D")
 clust_graf_alun<-plot(clust_alun, hang=-1)
 ```
 
-<img src="/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+<img src="/collection/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-6-1.png" width="672" />
 
 [Aqui](http://www.each.usp.br/lauretto/cursoR2017/04-AnaliseCluster.pdf) Tem uma apresentção bem resumidinha sobre os métodos de agrupamento de cluster, feita por [Marcelo Lauretto](http://www5.each.usp.br/web/prof/lauretto/) da USP
 
@@ -171,7 +171,7 @@ clust_alun_fct<-hclust(al.dist.fct, method = "complete")
 clust_graf_alun_fact<-plot(clust_alun_fct, hang=-1)
 ```
 
-<img src="/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+<img src="/collection/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 
 Vamos compara os dois?
 
@@ -180,7 +180,7 @@ library(cowplot)
 plot_grid(plot(clust_alun.comp, hang=-1), plot(clust_alun_fct, hang=-1))
 ```
 
-<img src="/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-8-1.png" width="672" /><img src="/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-8-2.png" width="672" /><img src="/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-8-3.png" width="672" />
+<img src="/collection/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-8-1.png" width="672" /><img src="/collection/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-8-2.png" width="672" /><img src="/collection/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-8-3.png" width="672" />
 
 ### Averigue a qualidade do cluster
 
@@ -211,7 +211,7 @@ plot(clust_alun_fct)
 rect.hclust(clust_alun_fct, k = 4, border = 2:5) # posse até ver quais são esses grupos
 ```
 
-<img src="/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-9-1.png" width="672" />
+<img src="/collection/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-9-1.png" width="672" />
 
 Agora, podemos voltar para nossos dados e ver se os grupos gerados. E à partir daqui, uma infindade de análises exploratórias podem ser feitas.
 
@@ -285,7 +285,7 @@ library(factoextra)
 fviz_cluster(k3, data = env[,-c(1,4,12)])
 ```
 
-<img src="/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-12-1.png" width="672" />
+<img src="/collection/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-12-1.png" width="672" />
 
 Será que **3** é ralmente o melhor número de clusters para separar as seções do rio?
 
@@ -293,7 +293,7 @@ Será que **3** é ralmente o melhor número de clusters para separar as seçõe
 fviz_nbclust(env[,-c(1,4,12)], kmeans, method = "silhouette") # felizmente tem uma função que faz isso rapidinho
 ```
 
-<img src="/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-13-1.png" width="672" />
+<img src="/collection/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-13-1.png" width="672" />
 
 Epa!!!! aparentemente são apenas duas as seções do rio que fazem sentido segundo os dados, portantom recomecemos de novo.
 
@@ -302,7 +302,7 @@ k2<-kmeans(env[,-c(1,4,12)], centers =2, nstart=25)
 fviz_cluster(k2, data = env[,-c(1,4,12)])
 ```
 
-<img src="/en/courses/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-14-1.png" width="672" />
+<img src="/collection/eco_num/cluster/cluster_files/figure-html/unnamed-chunk-14-1.png" width="672" />
 
 Então, parece que temos apenas um “alto” e um “baixo” rio.
 
