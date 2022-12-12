@@ -20,5 +20,5 @@ show_post_date: false
 show_post_thumbnail: true
 subtitle: Here you'll find all relevant material of the courses I teach
 thumbnail_left: false
-title: Create a Collection
+title: Aulas
 ---
