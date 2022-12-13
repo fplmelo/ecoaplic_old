@@ -21,6 +21,103 @@ xaringanExtra::embed_xaringan(url = "https://ecoaplic.org/slides_aulas/slides_ec
 1. Identidades
 1. Quantidades
 
+
+
+## Exercíico Comunidades Culinárias
+
+Fizemos um exercício muito bom em sala de aula. Criamos uma comunidades biológica com grãos e massa para simular a montagem de uma comundaidade biológica em uma ilha oceânica recém formada. Dois grupos fizeram amostragem: um grupo usou uma técnica de alatorização das amostras, soirtendo quadrados que correspondiam a 10% da área da ilha. O outro grupo usou outra tepcnica: usou dois transectos localizados de maneira planejada para maximizar a captura da diverisdade da ilha. A base de dados que geramos pode ser obtida [**NESTE LINK**](http://ecoaplic.org/content/collection/eco_num/com_cul.csv).
+
+### Agora, você precisa repetir os passos abaixo, mas fazer um esforço para comentar cada passo de exercício
+
+### Passo 1) Subir os dados no R
+
+```{r}
+# lembrem que para criar um 'chunk' como esse é só usar o comando "ctrl+alt+i"
+base<-read.csv("content/collection/eco_num/com_cul.csv", row.names = 1) # atenção, use o caminho onde você guardou a base que baixou anteriormente
+base # mostra a base. confira se está tudo ok
+
+```
+
+### passo 2) Começar a explorar a base
+Vamos separar as bases, e ver suas dimensões e checar se tudo está correto.
+
+Atenção: use os comandos 'dim()', 'nrow()',  'ncol()', 'rowSums()' e 'colSums()' para cada base e vá montando seu arquivo com os resutlados comentados.
+
+ver exemplo abaixo.
+```{r echo=FALSE} 
+# Notem que usei "echo=FALSE" para não aparecer os resultados e não ficar muito longo, mas deixem o seu como TRUE
+base_q<-base[,1:10] # criamos a base dos quadrados
+base_t<-base[,11:20] # criamos também a  base dos transectos
+
+# mchequem as bases com o comando abaixo
+base_q
+base_t
+
+dim(base_q) # Tabela formada por 10 linhas e 10 colunas
+colSums(base_t) # abundâncias de cada amostra da base de transectos
+
+## Explore...
+```
+
+### passo 3) Fazendo perguntas
+
+### Qual o número de espécies dos diferentes métodos?
+
+```{r}
+library(vegan)# Esse pacote tem um monte de análises massa para ecólogos
+library(tidyverse)
+
+specnumber(t(base_q)) # espécies de cada amostra... mas como saber o número total de espécies?
+
+base_q %>% # Aq2ui eu criei minha solição...
+  rownames_to_column("species") %>% # trouxe de volta o nomes das linhas para uma coluna
+  mutate(ab_spe=rowSums(base_q)) %>% # Criei uma coluna nova com as somas das abundâncias
+  filter(ab_spe > 0) %>% # filtrei para reter somente as somas maiores que zero, pois os zeros são espécies ausentes
+  count() # contei, BINGO!
+
+# Há muoitas outras formas...
+
+```
+
+
+### Qual a distribuição das abundâncias das espécies?
+
+```{r}
+base_q %>% 
+  rownames_to_column("species") %>%
+  mutate(ab_spe=rowSums(base_q)) %>% 
+  filter(ab_spe > 0) %>% #Até aqui usei o mesmo código de antes
+  arrange(desc(ab_spe)) %>% #em ordem decrescente mas não fixa quando for pro ggplot, aí temos que dar outro comando
+  mutate(species=factor(species, level = species)) %>% #agora ele fixou as ordens 
+  ggplot(aes(x=species, y=ab_spe))+
+  geom_line(group = 1)+geom_point(size = 3)->graf_abund_q
+
+graf_abund_q
+  
+base_t %>% 
+  rownames_to_column("species") %>%
+  mutate(ab_spe=rowSums(base_t)) %>% 
+  filter(ab_spe > 0) %>% #Até atui usei o mesmo código de antes
+  arrange(desc(ab_spe)) %>% #em ordem decrescente mas não fixa tuando for pro ggplot, aí temos tue dar outro comando
+  mutate(species=factor(species, level = species)) %>% #agora ele fixou as ordens 
+  ggplot(aes(x=species, y=ab_spe))+
+  geom_line(group = 1)+geom_point(size = 3)->graf_abund_t
+
+graf_abund_t
+
+# Agora posso unir os gráficos para melhorar a vizualização
+
+library(cowplot)
+plot_grid(graf_abund_q, graf_abund_t, labels = c("quadrados", "transectos"), ncol = 2)
+
+
+```
+
+### Pergunta 
+
+
+
+
 ### Vamos examinar essa comunidade
 
 ```{r message=FALSE, warning=FALSE}
