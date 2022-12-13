@@ -22,6 +22,217 @@ output: html_document
 2.  Identidades
 3.  Quantidades
 
+## Exercício Comunidades Culinárias (para etregar na forma de um Rpubs até 30 de dezembro de 2022)
+
+Fizemos um exercício muito bom em sala de aula. Criamos uma comunidades biológica com grãos e massa para simular a montagem de uma comundaidade biológica em uma ilha oceânica recém formada. Dois grupos fizeram amostragem: um grupo usou uma técnica de alatorização das amostras, soirtendo quadrados que correspondiam a 10% da área da ilha. O outro grupo usou outra tepcnica: usou dois transectos localizados de maneira planejada para maximizar a captura da diverisdade da ilha. A base de dados que geramos pode ser obtida [**NESTE LINK**](http://ecoaplic.org/content/collection/eco_num/com_cul.csv).
+
+### Agora, você precisa repetir os passos abaixo, mas fazer um esforço para comentar cada passo de exercício
+
+## Passo 1) Subir os dados no R
+
+``` r
+base<-read.csv("https://raw.githubusercontent.com/fplmelo/ecoaplic/main/content/collection/eco_num/com_cul.csv", row.names = 1) # atenção, use o caminho onde você guardou a base que baixou anteriormente
+base # mostra a base. confira se está tudo ok
+```
+
+    ##              q1 q2 q3 q4 q5 q6 q7 q8 q9 q10 t1 t2 t3 t4 t5 t6 t7 t8 t9 t10
+    ## arroz_c       0  1  7  6  1  4  4  1  1   5  3  8  5  6  3  0  0  0  0   3
+    ## arroz_e       1  0  0  1  0  0  8  4  0   3  0  1  8  1  1  0  0  0  1   0
+    ## milho         0  0  0  0  0  0  0  0  0   0  0  0  0  0  0  0  0  0  0   0
+    ## ervilha       0  0  1  0  0  0  1  0  0   0  0  0  1  0  0  0  0  0  0   0
+    ## feijao_preto  0  0  0  0  0  0  0  0  0   0  0  0  6  0  0  0  0  0  0   0
+    ## carioca_c     0  0  1  1  0  0  0  0  0   0  0  0  0  0  0  2  0  0  0   1
+    ## carioca_e     0  0  0  2  2  0  0  0  0   8  0  0  0  0  0  0  0  0  0   0
+    ## mac_paraf     0  0  0  0  0  0  0  0  0   0  0  0  0  0  0  0  1  0  0   0
+    ## mac_tubo      0  0  0  0  0  0  0  0  0   0  0  0  0  0  0  0  0  0  0   0
+    ## mac_espag     0  0  0  3  1  0  0  0  6   4 16  9  0  0  0  0  2  2  1   0
+
+### passo 2) Começar a explorar a base
+
+Vamos separar as bases, e ver suas dimensões e checar se tudo está correto.
+
+Atenção: use os comandos ‘dim()’, ‘nrow()’, ‘ncol()’, ‘rowSums()’ e ‘colSums()’ para cada base e vá montando seu arquivo com os resutlados comentados.
+
+ver exemplo abaixo.
+
+``` r
+# Notem que usei "echo=FALSE" para não aparecer os resultados e não ficar muito longo, mas deixem o seu como TRUE
+base_q<-base[,1:10] # criamos a base dos quadrados
+base_t<-base[,11:20] # criamos também a  base dos transectos
+
+# chequem as bases com o comando abaixo
+base_q
+```
+
+    ##              q1 q2 q3 q4 q5 q6 q7 q8 q9 q10
+    ## arroz_c       0  1  7  6  1  4  4  1  1   5
+    ## arroz_e       1  0  0  1  0  0  8  4  0   3
+    ## milho         0  0  0  0  0  0  0  0  0   0
+    ## ervilha       0  0  1  0  0  0  1  0  0   0
+    ## feijao_preto  0  0  0  0  0  0  0  0  0   0
+    ## carioca_c     0  0  1  1  0  0  0  0  0   0
+    ## carioca_e     0  0  0  2  2  0  0  0  0   8
+    ## mac_paraf     0  0  0  0  0  0  0  0  0   0
+    ## mac_tubo      0  0  0  0  0  0  0  0  0   0
+    ## mac_espag     0  0  0  3  1  0  0  0  6   4
+
+``` r
+base_t
+```
+
+    ##              t1 t2 t3 t4 t5 t6 t7 t8 t9 t10
+    ## arroz_c       3  8  5  6  3  0  0  0  0   3
+    ## arroz_e       0  1  8  1  1  0  0  0  1   0
+    ## milho         0  0  0  0  0  0  0  0  0   0
+    ## ervilha       0  0  1  0  0  0  0  0  0   0
+    ## feijao_preto  0  0  6  0  0  0  0  0  0   0
+    ## carioca_c     0  0  0  0  0  2  0  0  0   1
+    ## carioca_e     0  0  0  0  0  0  0  0  0   0
+    ## mac_paraf     0  0  0  0  0  0  1  0  0   0
+    ## mac_tubo      0  0  0  0  0  0  0  0  0   0
+    ## mac_espag    16  9  0  0  0  0  2  2  1   0
+
+``` r
+dim(base_q) # Tabela formada por 10 linhas e 10 colunas
+```
+
+    ## [1] 10 10
+
+``` r
+colSums(base_t) # abundâncias de cada amostra da base de transectos
+```
+
+    ##  t1  t2  t3  t4  t5  t6  t7  t8  t9 t10 
+    ##  19  18  20   7   4   2   3   2   2   4
+
+``` r
+## Explore...
+```
+
+## passo 3) Fazendo perguntas
+
+### Qual o número de espécies dos diferentes métodos?
+
+``` r
+library(vegan)# Esse pacote tem um monte de análises massa para ecólogos
+library(tidyverse)
+
+specnumber(t(base_q)) # espécies de cada amostra... mas como saber o número total de espécies?
+```
+
+    ##  q1  q2  q3  q4  q5  q6  q7  q8  q9 q10 
+    ##   1   1   3   5   3   1   3   2   2   4
+
+``` r
+base_q %>% # Aq2ui eu criei minha solição...
+  rownames_to_column("species") %>% # trouxe de volta o nomes das linhas para uma coluna
+  mutate(ab_spe=rowSums(base_q)) %>% # Criei uma coluna nova com as somas das abundâncias
+  filter(ab_spe > 0) %>% # filtrei para reter somente as somas maiores que zero, pois os zeros são espécies ausentes
+  count() # contei, BINGO!
+```
+
+    ##   n
+    ## 1 6
+
+``` r
+# Há muoitas outras formas...
+```
+
+### Qual a distribuição das abundâncias das espécies?
+
+``` r
+base_q %>% 
+  rownames_to_column("species") %>%
+  mutate(ab_spe=rowSums(base_q)) %>% 
+  filter(ab_spe > 0) %>% #Até aqui usei o mesmo código de antes
+  arrange(desc(ab_spe)) %>% #em ordem decrescente mas não fixa quando for pro ggplot, aí temos que dar outro comando
+  mutate(species=factor(species, level = species)) %>% #agora ele fixou as ordens 
+  ggplot(aes(x=species, y=ab_spe))+
+  geom_line(group = 1)+geom_point(size = 3)->graf_abund_q
+
+graf_abund_q
+```
+
+<img src="/collection/eco_num/descricao_comunidade/desc_comm_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+
+``` r
+base_t %>% 
+  rownames_to_column("species") %>%
+  mutate(ab_spe=rowSums(base_t)) %>% 
+  filter(ab_spe > 0) %>% #Até atui usei o mesmo código de antes
+  arrange(desc(ab_spe)) %>% #em ordem decrescente mas não fixa tuando for pro ggplot, aí temos tue dar outro comando
+  mutate(species=factor(species, level = species)) %>% #agora ele fixou as ordens 
+  ggplot(aes(x=species, y=ab_spe))+
+  geom_line(group = 1)+geom_point(size = 3)->graf_abund_t
+
+graf_abund_t
+```
+
+<img src="/collection/eco_num/descricao_comunidade/desc_comm_files/figure-html/unnamed-chunk-5-2.png" width="672" />
+
+``` r
+# Agora posso unir os gráficos para melhorar a vizualização
+
+library(cowplot)
+plot_grid(graf_abund_q, graf_abund_t, labels = c("quadrados", "transectos"), ncol = 2)
+```
+
+<img src="/collection/eco_num/descricao_comunidade/desc_comm_files/figure-html/unnamed-chunk-5-3.png" width="672" />
+
+## Estimadores de Riqueza
+
+Note que sabemos que nenhum dos métodos capturou todas as espećies que sabíamos que existia na nossa comunidade culinária. Na natureza, porém, nunca sabemos quantas especies de fato existem. Para contornar esse problema e saber se nossas amostras são representativas, existem algumas estratpegias
+
+### Curva de rarefação
+
+Leiam o excelente livro de Análises Ecológicas no R onde tem um [capítulo sobre rarefação](https://analises-ecologicas.com/cap10.html)
+
+Mas, aqui vamos usar nossos dados e com códigos mais simples
+
+### Pergunta: Será que as amostras atingiram o número real de espécies
+
+``` r
+acum_q<-specaccum(t(base_q)) # existe uma função na library vegan que faz isso... ele cria as curvas para vizualizrmos
+acum_t<-specaccum(t(base_t))
+plot(acum_q, ci.type = "poly", col = "blue", lwd = 2, ci.lty = 0, 
+    ci.col = "lightblue", main = "quadrantes", xlab = "Número de amostras", 
+    ylab = "Número de espécies")
+```
+
+<img src="/collection/eco_num/descricao_comunidade/desc_comm_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+
+``` r
+plot(acum_t, ci.type = "poly", col = "blue", lwd = 2, ci.lty = 0, 
+    ci.col = "lightblue", main = "transectos", xlab = "Número de amostras", 
+    ylab = "Número de espécies") # note que essa curva não parece assintotizada
+```
+
+<img src="/collection/eco_num/descricao_comunidade/desc_comm_files/figure-html/unnamed-chunk-6-2.png" width="672" />
+
+``` r
+specpool(base_q)# Esses são métodos de estimação de riqueza (chao, jack1, jack2, boot, etc... os .se são os valores do erro padrão)
+```
+
+    ##     Species   chao  chao.se jack1 jack1.se    jack2     boot  boot.se  n
+    ## All      10 12.025 3.089144  12.7 2.056696 13.67778 11.35255 1.588261 10
+
+``` r
+specpool(base_t)# etimadores para transecto
+```
+
+    ##     Species chao   chao.se jack1 jack1.se    jack2    boot  boot.se  n
+    ## All      10 10.3 0.7035624  11.8 1.272792 9.133333 11.3759 1.480355 10
+
+### Quais estimadores forma mais fidedignos? Qual métodos obteve menos erro?
+
+para entender e ver códigos dessa análise veja [esse site](http://pedroj.github.io/interaccum/)
+
+### Para finalizar esse exercício, repita o que foi feito, comente seus resultados e códigos e tente clacular os índices de diversidade de Shannon e Simpson para cada um dos métodos (base_q e base_t). Comente.
+
+# Para brincar durante as férias é esse exercício abaixo (para entregar dia 30 de janeiro de 2023)
+
+Essa é uma base de dados reais de árvores do Panamá onde muitos biólogos estudam ecologia tropical.
+
 ### Vamos examinar essa comunidade
 
 ``` r
@@ -110,34 +321,34 @@ sp1
     ## Accumulation method: random, with 100 permutations
     ## Call: specaccum(comm = BCI, method = "random") 
     ## 
-    ##                                                                           
-    ## Sites     1.000   2.00000   3.00000   4.00000   5.00000   6.00000   7.0000
-    ## Richness 89.820 121.18000 138.76000 150.91000 159.31000 165.95000 171.4600
-    ## sd        6.646   7.34074   5.75092   5.78939   5.46743   5.16862   4.5824
+    ##                                                                            
+    ## Sites     1.00000   2.0000   3.0000   4.00000   5.00000   6.00000   7.00000
+    ## Richness 90.33000 122.0900 139.0600 150.39000 159.29000 166.09000 171.31000
+    ## sd        6.25398   6.3661   6.0249   5.70645   5.83319   5.33541   5.36862
     ##                                                                               
     ## Sites      8.00000   9.00000  10.00000  11.00000  12.00000  13.00000  14.00000
-    ## Richness 176.30000 179.91000 183.16000 185.69000 188.25000 190.50000 192.59000
-    ## sd         4.54273   4.41781   4.40092   4.18679   4.31435   4.29823   4.24763
-    ##                                                                               
-    ## Sites     15.00000  16.00000  17.00000  18.00000  19.00000  20.00000  21.00000
-    ## Richness 194.68000 196.20000 197.75000 199.18000 200.45000 201.74000 203.18000
-    ## sd         4.02989   3.94661   3.95013   3.96546   3.93989   4.07163   3.95014
-    ##                                                                              
-    ## Sites     22.00000  23.0000  24.00000  25.00000  26.00000  27.00000  28.00000
-    ## Richness 204.40000 205.7000 206.77000 208.03000 208.99000 210.02000 211.00000
-    ## sd         3.84024   3.8363   3.79488   3.64444   3.72134   3.59287   3.53339
+    ## Richness 175.60000 179.16000 182.54000 185.50000 188.22000 190.64000 192.92000
+    ## sd         5.10496   4.88188   4.54032   4.32867   4.16959   4.07634   4.10882
     ##                                                                             
-    ## Sites     29.00000  30.0000  31.00000  32.00000  33.0000  34.00000  35.00000
-    ## Richness 212.01000 212.8800 213.86000 214.60000 215.4100 216.20000 216.96000
-    ## sd         3.45094   3.3068   3.17509   3.14305   3.1337   2.95077   2.96757
-    ##                                                                              
-    ## Sites     36.0000  37.00000  38.00000  39.00000  40.00000  41.00000  42.00000
-    ## Richness 217.5500 218.18000 218.73000 219.29000 219.88000 220.46000 221.11000
-    ## sd         2.8369   2.72059   2.66233   2.62965   2.61031   2.42637   2.18764
-    ##                                                                              
-    ## Sites     43.00000  44.00000  45.00000  46.0000  47.00000  48.00000  49.00000
-    ## Richness 221.51000 222.11000 222.55000 223.1800 223.61000 224.09000 224.51000
-    ## sd         2.03254   1.77465   1.56589   1.2822   1.13614   0.95447   0.70345
+    ## Sites     15.00000  16.00000  17.00000  18.00000  19.00000  20.0000  21.0000
+    ## Richness 194.83000 196.38000 198.16000 199.82000 201.34000 202.6800 203.8900
+    ## sd         3.97989   3.86588   3.86573   3.62756   3.62154   3.6178   3.5502
+    ##                                                                               
+    ## Sites     22.00000  23.00000  24.00000  25.00000  26.00000  27.00000  28.00000
+    ## Richness 205.06000 206.28000 207.42000 208.53000 209.55000 210.34000 211.28000
+    ## sd         3.49262   3.45265   3.48497   3.51463   3.27641   3.12119   2.93733
+    ##                                                                               
+    ## Sites     29.00000  30.00000  31.00000  32.00000  33.00000  34.00000  35.00000
+    ## Richness 212.19000 212.88000 213.76000 214.53000 215.27000 215.94000 216.71000
+    ## sd         2.95657   2.87546   2.85374   2.69476   2.71864   2.65459   2.48752
+    ##                                                                               
+    ## Sites     36.00000  37.00000  38.00000  39.00000  40.00000  41.00000  42.00000
+    ## Richness 217.31000 217.97000 218.62000 219.21000 219.82000 220.48000 221.08000
+    ## sd         2.46468   2.45959   2.38166   2.25315   2.08593   2.02749   1.94199
+    ##                                                                               
+    ## Sites     43.00000  44.00000  45.00000  46.00000  47.00000  48.00000  49.00000
+    ## Richness 221.64000 222.22000 222.66000 223.21000 223.78000 224.08000 224.60000
+    ## sd         1.89374   1.76715   1.57775   1.47227   1.25191   1.08879   0.66667
     ##             
     ## Sites     50
     ## Richness 225
@@ -150,7 +361,7 @@ plot(sp1, ci.type="poly", col="blue", lwd=2, ci.lty=0, ci.col="lightblue")
 boxplot(sp1, col="yellow", add=TRUE, pch="+")
 ```
 
-<img src="/collection/eco_num/descricao_comunidade/desc_comm_files/figure-html/unnamed-chunk-8-1.png" width="672" />
+<img src="/collection/eco_num/descricao_comunidade/desc_comm_files/figure-html/unnamed-chunk-13-1.png" width="672" />
 
 ## 2 - Curvas de rank-abunbdância
 
@@ -178,7 +389,7 @@ mod
 plot(mod)
 ```
 
-<img src="/collection/eco_num/descricao_comunidade/desc_comm_files/figure-html/unnamed-chunk-10-1.png" width="672" />
+<img src="/collection/eco_num/descricao_comunidade/desc_comm_files/figure-html/unnamed-chunk-15-1.png" width="672" />
 
 ### Código para vários modelos
 
@@ -204,7 +415,7 @@ mod2
 plot(mod2)
 ```
 
-<img src="/collection/eco_num/descricao_comunidade/desc_comm_files/figure-html/unnamed-chunk-12-1.png" width="672" />
+<img src="/collection/eco_num/descricao_comunidade/desc_comm_files/figure-html/unnamed-chunk-17-1.png" width="672" />
 
 ## OUtro pacote, o “BiodiversityR” é muito interessante e traz suas funções úteis
 
@@ -216,7 +427,7 @@ data("dune.env")
 bio<-rankabuncomp(dune, dune.env, factor='Management', return.data=TRUE, specnames=c(1:2), legend=FALSE)
 ```
 
-<img src="/collection/eco_num/descricao_comunidade/desc_comm_files/figure-html/unnamed-chunk-13-1.png" width="672" />
+<img src="/collection/eco_num/descricao_comunidade/desc_comm_files/figure-html/unnamed-chunk-18-1.png" width="672" />
 
 ``` r
 bio
@@ -408,14 +619,14 @@ plotgg1 <- ggplot(data=bio, aes(x = rank, y = abundance)) +
 plotgg1
 ```
 
-<img src="/collection/eco_num/descricao_comunidade/desc_comm_files/figure-html/unnamed-chunk-14-1.png" width="672" />
+<img src="/collection/eco_num/descricao_comunidade/desc_comm_files/figure-html/unnamed-chunk-19-1.png" width="672" />
 
 ``` r
 RA.data <- rankabuncomp(dune, y=dune.env, factor='Management', 
     return.data=TRUE, specnames=c(1:10), legend=FALSE)
 ```
 
-<img src="/collection/eco_num/descricao_comunidade/desc_comm_files/figure-html/unnamed-chunk-15-1.png" width="672" />
+<img src="/collection/eco_num/descricao_comunidade/desc_comm_files/figure-html/unnamed-chunk-20-1.png" width="672" />
 
 ``` r
 plotgg2 <- ggplot(data=RA.data, aes(x = rank, y = abundance)) + 
@@ -433,13 +644,13 @@ plotgg2 <- ggplot(data=RA.data, aes(x = rank, y = abundance)) +
 plotgg2
 ```
 
-<img src="/collection/eco_num/descricao_comunidade/desc_comm_files/figure-html/unnamed-chunk-15-2.png" width="672" />
+<img src="/collection/eco_num/descricao_comunidade/desc_comm_files/figure-html/unnamed-chunk-20-2.png" width="672" />
 
 # Exercício
 
-1.  Faça uma análise descritiva de outra base de dados.
-2.  Utilize funções prontas dos pacotes msa também tente chegar so resultados esperados com funções básicas do R
-3.  Comente suas análises dando uma interpretação ecológica aos gráficos
+1.  Faça uma análise descritiva dessa da nossa base de dados de comunidade culinária usando esses códigos.
+2.  Utilize funções prontas dos pacotes mas também tente chegar so resultados esperados com funções básicas do R
+3.  Comente suas análises dando uma interpretação ecológica aos gráficos, crie grpaficos!!
 
 # Bibliografia
 
